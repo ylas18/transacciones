@@ -15,5 +15,7 @@ import javax.ejb.Local;
 public interface EstudianteTransaccionLocal {
 
     public void requerido();
+    public void requiresNew2();
+    
 
 }

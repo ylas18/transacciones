@@ -28,19 +28,25 @@ public class ControllerIndex implements Serializable {
 
     public void iniciarRequerido() {
 
-        System.out.println("Entre a IniciarRequerido");
+        try {
+            System.out.println("Entre a IniciarRequerido");
 
-        estudianteTransaccionLocal.requerido();
+            estudianteTransaccionLocal.requerido();
+
+        } catch (Exception e) {
+
+            System.out.println("ENTRE AL CATCH");
+            
+            estudianteTransaccionLocal.requiresNew2();
+        }
 
     }
-
 
     public void iniciarRequiresNew() {
 
         System.out.println("Entre a iniciarRequiresNew");
 
         //estudianteTransaccionLocal.requiresNew();
-
     }
 
 }
