@@ -33,14 +33,33 @@ public class EstudianteTransaccion implements EstudianteTransaccionLocal {
     @Override
     @TransactionAttribute(TransactionAttributeType.REQUIRED)
     public void requerido() {
-        Estudiante estudiante = new Estudiante(1070984895, "Laura Gonzalez");
-        estudianteFacadeLocal.create(estudiante);
+        try {
+            Estudiante estudiante = new Estudiante(1070984895, "Laura Gonzalez");
+            estudianteFacadeLocal.create(estudiante);
 
-        Materia materia = new Materia(2, "Programacion", 2);
-        materiaFacadeLocal.create(materia);
+            Materia materia = new Materia(1, "Programacion", 2);
+            materiaFacadeLocal.create(materia);
 
-        Estudiante estudiante2 = estudianteFacadeLocal.find(1070970275);
-        estudiante2.setNombre("Pepito Perez");
-        estudianteFacadeLocal.edit(estudiante2);
+        } catch (Exception e) {
+            requiresNew2();
+            System.out.println(e);
+        }
+
+        
+
     }
+
+    @TransactionAttribute(TransactionAttributeType.REQUIRES_NEW)
+    public void requiresNew2() {
+
+        Estudiante estudiante2 = estudianteFacadeLocal.find(1070984895);
+        estudiante2.setNombre("Leonardo Sarmiento");
+        estudianteFacadeLocal.edit(estudiante2);
+
+        Materia materia = materiaFacadeLocal.find(1);
+        materia.setNombre("Matematicas");
+        materiaFacadeLocal.edit(materia);
+
+    }
+
 }

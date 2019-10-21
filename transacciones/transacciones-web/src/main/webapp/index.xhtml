@@ -15,8 +15,8 @@
                 <h:panelGrid style="width: 100%" columns="2" >  
                     <p:panel header="Normal">
                         <h:panelGrid style="width: 100%" cellpadding="2">  
-                            <p:commandButton value="REQUIRED" action="#{controllerIndex.iniciarRequerido}"  update="growl" />
-                            <p:commandButton value="REQUIRES_NEW"  update="growl" />
+                            <p:commandButton value="REQUIRED" action="#{controllerIndex.iniciarRequerido()}"  update="growl" />
+                            <p:commandButton value="REQUIRES_NEW" action="#{controllerIndex.iniciarRequiresNew()}"  update="growl" />
                             <p:commandButton value="SUPPORTS"  update="growl" />
                             <p:commandButton value="NOT_SUPPORTED"  update="growl" />
                             <p:commandButton value="MANDATORY"  update="growl" />
@@ -25,8 +25,8 @@
                     </p:panel>
                     <p:panel  header="Falla">
                         <h:panelGrid style="width: 100%" cellpadding="2">  
-                            <p:commandButton value="REQUIRED" action="#{controllerIndex.iniciarRequerido}"  update="growl" />
-                            <p:commandButton value="REQUIRES_NEW"  update="growl" />
+                            <p:commandButton value="REQUIRED" update="growl" />
+                            <p:commandButton value="REQUIRES_NEW" update="growl" />
                             <p:commandButton value="SUPPORTS"  update="growl" />
                             <p:commandButton value="NOT_SUPPORTED"  update="growl" />
                             <p:commandButton value="MANDATORY"  update="growl" />
