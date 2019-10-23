@@ -5,6 +5,10 @@
  */
 package a.com.Controller;
 
+import a.com.Bean.EstudianteFacadeLocal;
+import a.com.Bean.MateriaFacadeLocal;
+import a.com.Entity.Estudiante;
+import a.com.Entity.Materia;
 import a.com.Transacciones.EstudianteTransaccionLocal;
 import java.io.Serializable;
 import javax.ejb.EJB;
@@ -23,10 +27,33 @@ public class ControllerIndex implements Serializable {
     @EJB
     EstudianteTransaccionLocal estudianteTransaccionLocal;
 
+    @EJB
+    EstudianteFacadeLocal estudianteFacadeLocal;
+
+    @EJB
+    MateriaFacadeLocal materiaFacadeLocal;
+
     public ControllerIndex() {
     }
 
-    public void iniciarRequerido() {
+    public void iniciarRequeridoSin() {
+
+        try {
+            System.out.println("Entre a IniciarRequeridoSin");
+
+            Estudiante estudiante = new Estudiante(1, "Jose");
+            estudianteFacadeLocal.create(estudiante);
+
+            Materia materia = new Materia(1, "Matematicas", 3);
+            materiaFacadeLocal.create(materia);
+
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+
+    }
+
+    public void iniciarRequeridoCon() {
 
         try {
             System.out.println("Entre a IniciarRequerido");
@@ -35,8 +62,8 @@ public class ControllerIndex implements Serializable {
 
         } catch (Exception e) {
 
-            System.out.println("ENTRE AL CATCH");
-            
+            System.out.println("Entre a RequiresNew");
+
             estudianteTransaccionLocal.requiresNew2();
         }
 

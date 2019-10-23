@@ -13,26 +13,16 @@
             <p:panel  header="Sin Transaccionalidad">   
 
                 <h:panelGrid style="width: 100%" columns="2" >  
-                    <p:panel header="Normal">
+                    
                         <h:panelGrid style="width: 100%" cellpadding="2">  
-                            <p:commandButton value="REQUIRED" actionListener="#{controllerIndex.iniciarRequerido()}"  update="growl" />
+                            <p:commandButton value="REQUIRED" actionListener="#{controllerIndex.iniciarRequeridoSin()}"  update="growl" />
                             <p:commandButton value="REQUIRES_NEW" actionListener="#{controllerIndex.iniciarRequiresNew()}"  update="growl" />
                             <p:commandButton value="SUPPORTS"  update="growl" />
                             <p:commandButton value="NOT_SUPPORTED"  update="growl" />
                             <p:commandButton value="MANDATORY"  update="growl" />
                             <p:commandButton value="NEVER"  update="growl" />
                         </h:panelGrid>
-                    </p:panel>
-                    <p:panel  header="Falla">
-                        <h:panelGrid style="width: 100%" cellpadding="2">  
-                            <p:commandButton value="REQUIRED" update="growl" />
-                            <p:commandButton value="REQUIRES_NEW" update="growl" />
-                            <p:commandButton value="SUPPORTS"  update="growl" />
-                            <p:commandButton value="NOT_SUPPORTED"  update="growl" />
-                            <p:commandButton value="MANDATORY"  update="growl" />
-                            <p:commandButton value="NEVER"  update="growl" />
-                        </h:panelGrid>
-                    </p:panel>
+                    
                 </h:panelGrid>  
 
             </p:panel> 

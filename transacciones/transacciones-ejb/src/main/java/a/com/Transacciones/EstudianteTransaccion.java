@@ -34,10 +34,10 @@ public class EstudianteTransaccion implements EstudianteTransaccionLocal {
     @TransactionAttribute(TransactionAttributeType.REQUIRED)
     public void requerido() {
 
-        Estudiante estudiante = new Estudiante(1070984895, "Laura Gonzalez");
+        Estudiante estudiante = new Estudiante(2, "Laura Gonzalez");
         estudianteFacadeLocal.create(estudiante);
 
-        Materia materia = new Materia(1, "Programacion", 2);
+        Materia materia = new Materia(2,"Programacion", 2);
         materiaFacadeLocal.create(materia);
 
     }
@@ -51,7 +51,7 @@ public class EstudianteTransaccion implements EstudianteTransaccionLocal {
         estudianteFacadeLocal.edit(estudiante2);
 
         Materia materia = materiaFacadeLocal.find(1);
-        materia.setNombre("Matematicas");
+        materia.setNombre("Inteligencia Artificial");
         materiaFacadeLocal.edit(materia);
 
     }
