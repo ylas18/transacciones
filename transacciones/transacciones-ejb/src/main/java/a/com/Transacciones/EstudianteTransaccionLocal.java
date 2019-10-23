@@ -14,8 +14,18 @@ import javax.ejb.Local;
 @Local
 public interface EstudianteTransaccionLocal {
 
-    public void requerido();
-    public void requiresNew2();
-    
+    public void requeridoCon();
+
+    public void requiresNew2Con();
+
+    public void supportedCon();
+
+    public void notSupportedCon();
+
+    public void mandatoryCon();
+
+    public void neverCon();
+
+    public void todos();
 
 }

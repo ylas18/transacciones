@@ -29,5 +29,18 @@ public interface EstudianteFacadeLocal {
     List<Estudiante> findRange(int[] range);
 
     int count();
-    
+
+    void crearRequerido();
+
+    void crearRequeridoNew();
+
+    void crearSupports();
+
+    void crearNoSupports();
+
+    void crearMandatory();
+
+    void crearNever();
+
+
 }

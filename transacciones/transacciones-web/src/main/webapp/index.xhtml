@@ -13,28 +13,28 @@
             <p:panel  header="Sin Transaccionalidad">   
 
                 <h:panelGrid style="width: 100%" columns="2" >  
-                    
-                        <h:panelGrid style="width: 100%" cellpadding="2">  
-                            <p:commandButton value="REQUIRED" actionListener="#{controllerIndex.iniciarRequeridoSin()}"  update="growl" />
-                            <p:commandButton value="REQUIRES_NEW" actionListener="#{controllerIndex.iniciarRequiresNew()}"  update="growl" />
-                            <p:commandButton value="SUPPORTS"  update="growl" />
-                            <p:commandButton value="NOT_SUPPORTED"  update="growl" />
-                            <p:commandButton value="MANDATORY"  update="growl" />
-                            <p:commandButton value="NEVER"  update="growl" />
-                        </h:panelGrid>
-                    
+
+                    <h:panelGrid style="width: 100%" cellpadding="2">  
+                        <p:commandButton value="REQUIRED" actionListener="#{controllerIndex.iniciarRequeridoSin()}"  update="growl" />
+                        <p:commandButton value="REQUIRES_NEW" actionListener="#{controllerIndex.iniciarRequeridoNewSin()}"  update="growl" />
+                        <p:commandButton value="SUPPORTS" actionListener="#{controllerIndex.iniciarSupportSin()}" update="growl" />
+                        <p:commandButton value="NOT_SUPPORTED" actionListener="#{controllerIndex.iniciarNotSupportSin()}"  update="growl" />
+                        <p:commandButton value="MANDATORY"  actionListener="#{controllerIndex.iniciarMandatorySin()}" update="growl" />
+                        <p:commandButton value="NEVER" actionListener="#{controllerIndex.iniciarNeverSin()}"  update="growl" />
+                    </h:panelGrid>
+
                 </h:panelGrid>  
 
             </p:panel> 
             <p:panel  header="Con Transaccionalidad">   
 
                 <h:panelGrid style="width: 100%" columns="1" cellpadding="1">  
-                    <p:commandButton value="REQUIRED"  update="growl" />
-                    <p:commandButton value="REQUIRES_NEW"  update="growl" />
-                    <p:commandButton value="SUPPORTS"  update="growl" />
-                    <p:commandButton value="NOT_SUPPORTED"  update="growl" />
-                    <p:commandButton value="MANDATORY"  update="growl" />
-                    <p:commandButton value="NEVER"  update="growl" />
+                    <p:commandButton value="REQUIRED"  actionListener="#{controllerIndex.iniciarRequeridoCon()}"  update="growl" />
+                    <p:commandButton value="REQUIRES_NEW"  actionListener="#{controllerIndex.iniciarRequeridoNewCon()}"  update="growl" />
+                    <p:commandButton value="SUPPORTS"  actionListener="#{controllerIndex.iniciarSupportCon()}" update="growl" />
+                    <p:commandButton value="NOT_SUPPORTED"  actionListener="#{controllerIndex.iniciarNotSupportCon()}" update="growl" />
+                    <p:commandButton value="MANDATORY"  actionListener="#{controllerIndex.iniciarMandatoryCon()}" update="growl" />
+                    <p:commandButton value="NEVER"  actionListener="#{controllerIndex.iniciarNeverCon()}" update="growl" />
                 </h:panelGrid>  
 
             </p:panel> 

@@ -7,8 +7,6 @@ package a.com.Transacciones;
 
 import a.com.Bean.EstudianteFacadeLocal;
 import a.com.Bean.MateriaFacadeLocal;
-import a.com.Entity.Estudiante;
-import a.com.Entity.Materia;
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
 import javax.ejb.TransactionAttribute;
@@ -32,27 +30,81 @@ public class EstudianteTransaccion implements EstudianteTransaccionLocal {
 
     @Override
     @TransactionAttribute(TransactionAttributeType.REQUIRED)
-    public void requerido() {
+    public void todos() {
 
-        Estudiante estudiante = new Estudiante(2, "Laura Gonzalez");
-        estudianteFacadeLocal.create(estudiante);
+        estudianteFacadeLocal.crearRequerido();
+        estudianteFacadeLocal.crearRequeridoNew();
+        estudianteFacadeLocal.crearSupports();
+        estudianteFacadeLocal.crearNoSupports();
+        estudianteFacadeLocal.crearMandatory();
+        estudianteFacadeLocal.crearNever();
 
-        Materia materia = new Materia(2,"Programacion", 2);
-        materiaFacadeLocal.create(materia);
+        /*
+         Estudiante estudiante = new Estudiante(2, "Laura Gonzalez");
+         estudianteFacadeLocal.create(estudiante);
+        
+         requiresNew2();
+        
+         Materia materia = new Materia(2, "Programacion", 2);
+         materiaFacadeLocal.create(materia);
+         */
+    }
 
+    @Override
+    @TransactionAttribute(TransactionAttributeType.REQUIRED)
+    public void requeridoCon() {
+
+        estudianteFacadeLocal.crearRequerido();
+        estudianteFacadeLocal.crearRequeridoNew();
+
+        /*
+         Estudiante estudiante = new Estudiante(2, "Laura Gonzalez");
+         estudianteFacadeLocal.create(estudiante);
+        
+         requiresNew2();
+        
+         Materia materia = new Materia(2, "Programacion", 2);
+         materiaFacadeLocal.create(materia);
+         */
     }
 
     @Override
     @TransactionAttribute(TransactionAttributeType.REQUIRES_NEW)
-    public void requiresNew2() {
+    public void requiresNew2Con() {
 
-        Estudiante estudiante2 = estudianteFacadeLocal.find(1070984895);
-        estudiante2.setNombre("Leonardo Sarmiento");
-        estudianteFacadeLocal.edit(estudiante2);
+        estudianteFacadeLocal.crearRequeridoNew();
 
-        Materia materia = materiaFacadeLocal.find(1);
-        materia.setNombre("Inteligencia Artificial");
-        materiaFacadeLocal.edit(materia);
+    }
+
+    @Override
+    @TransactionAttribute(TransactionAttributeType.REQUIRED)
+    public void supportedCon() {
+
+        estudianteFacadeLocal.crearSupports();
+
+    }
+
+    @Override
+    @TransactionAttribute(TransactionAttributeType.NOT_SUPPORTED)
+    public void notSupportedCon() {
+
+        estudianteFacadeLocal.crearNoSupports();
+
+    }
+
+    @Override
+    @TransactionAttribute(TransactionAttributeType.REQUIRED)
+    public void mandatoryCon() {
+
+        estudianteFacadeLocal.crearMandatory();
+
+    }
+
+    @Override
+    @TransactionAttribute(TransactionAttributeType.NEVER)
+    public void neverCon() {
+
+        estudianteFacadeLocal.crearNever();
 
     }
 

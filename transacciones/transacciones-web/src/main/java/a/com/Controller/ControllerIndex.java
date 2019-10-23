@@ -7,8 +7,6 @@ package a.com.Controller;
 
 import a.com.Bean.EstudianteFacadeLocal;
 import a.com.Bean.MateriaFacadeLocal;
-import a.com.Entity.Estudiante;
-import a.com.Entity.Materia;
 import a.com.Transacciones.EstudianteTransaccionLocal;
 import java.io.Serializable;
 import javax.ejb.EJB;
@@ -39,41 +37,139 @@ public class ControllerIndex implements Serializable {
     public void iniciarRequeridoSin() {
 
         try {
-            System.out.println("Entre a IniciarRequeridoSin");
-
-            Estudiante estudiante = new Estudiante(1, "Jose");
-            estudianteFacadeLocal.create(estudiante);
-
-            Materia materia = new Materia(1, "Matematicas", 3);
-            materiaFacadeLocal.create(materia);
+            estudianteFacadeLocal.crearRequerido();
 
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
+    }
 
+    public void iniciarRequeridoNewSin() {
+
+        try {
+            estudianteFacadeLocal.crearRequeridoNew();
+
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+    public void iniciarSupportSin() {
+
+        try {
+            estudianteFacadeLocal.crearSupports();
+
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+    public void iniciarNotSupportSin() {
+
+        try {
+            estudianteFacadeLocal.crearNoSupports();
+
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+    public void iniciarMandatorySin() {
+
+        try {
+            estudianteFacadeLocal.crearMandatory();
+
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+    public void iniciarNeverSin() {
+
+        try {
+            estudianteFacadeLocal.crearNever();
+
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
     }
 
     public void iniciarRequeridoCon() {
 
         try {
-            System.out.println("Entre a IniciarRequerido");
 
-            estudianteTransaccionLocal.requerido();
+            estudianteTransaccionLocal.requeridoCon();
 
         } catch (Exception e) {
 
-            System.out.println("Entre a RequiresNew");
+            System.out.println(e.getMessage());
 
-            estudianteTransaccionLocal.requiresNew2();
         }
 
     }
 
-    public void iniciarRequiresNew() {
+    public void iniciarRequeridoNewCon() {
 
-        System.out.println("Entre a iniciarRequiresNew");
+        try {
 
-        //estudianteTransaccionLocal.requiresNew();
+            estudianteTransaccionLocal.requiresNew2Con();
+
+        } catch (Exception e) {
+
+            System.out.println(e.getMessage());
+
+        }
+    }
+
+    public void iniciarSupportCon() {
+        try {
+
+            estudianteTransaccionLocal.supportedCon();
+
+        } catch (Exception e) {
+
+            System.out.println(e.getMessage());
+
+        }
+    }
+
+    public void iniciarNotSupportCon() {
+
+        try {
+
+            estudianteTransaccionLocal.notSupportedCon();
+
+        } catch (Exception e) {
+
+            System.out.println(e.getMessage());
+
+        }
+    }
+
+    public void iniciarMandatoryCon() {
+
+        try {
+
+            estudianteTransaccionLocal.mandatoryCon();
+
+        } catch (Exception e) {
+
+            System.out.println(e.getMessage());
+
+        }
+    }
+
+    public void iniciarNeverCon() {
+
+        try {
+
+            estudianteTransaccionLocal.neverCon();
+
+        } catch (Exception e) {
+
+            System.out.println(e.getMessage());
+
+        }
     }
 
 }
