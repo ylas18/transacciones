@@ -16,6 +16,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
 /**
+ * http://cursojavaee.blogspot.com/2013/06/diapositivas-clase-11-transacciones-en.html
  *
  * @author Yesid
  */
@@ -38,23 +39,19 @@ public class EstudianteFacade extends AbstractFacade<Estudiante> implements Estu
     @Override
     @TransactionAttribute(TransactionAttributeType.REQUIRED)
     public void crearRequerido() {
+        
         Estudiante estudiante = new Estudiante(1, "Pepe");
         em.persist(estudiante);
-        
+
         Materia materia = new Materia(1, "Matematicas", 5);
         em.persist(materia);
 
     }
 
     @Override
-    @TransactionAttribute(TransactionAttributeType.REQUIRED)
-    public void crearRequerido2() {
-
-    }
-
-    @Override
     @TransactionAttribute(TransactionAttributeType.REQUIRES_NEW)
     public void crearRequeridoNew() {
+        
         Estudiante estudiante = new Estudiante(2, "Pepe");
         em.persist(estudiante);
 
@@ -64,15 +61,10 @@ public class EstudianteFacade extends AbstractFacade<Estudiante> implements Estu
     }
 
     @Override
-    @TransactionAttribute(TransactionAttributeType.REQUIRES_NEW)
-    public void crearRequeridoNew2() {
-
-    }
-
-    @Override
     @TransactionAttribute(TransactionAttributeType.SUPPORTS)
     public void crearSupports() {
         
+        System.out.println("Entre al Support");
         Estudiante estudiante = new Estudiante(3, "Pepe");
         em.persist(estudiante);
 
@@ -82,14 +74,9 @@ public class EstudianteFacade extends AbstractFacade<Estudiante> implements Estu
     }
 
     @Override
-    @TransactionAttribute(TransactionAttributeType.SUPPORTS)
-    public void crearSupports2() {
-
-    }
-
-    @Override
     @TransactionAttribute(TransactionAttributeType.NOT_SUPPORTED)
     public void crearNoSupports() {
+        
         Estudiante estudiante = new Estudiante(4, "Pepe");
         em.persist(estudiante);
 
@@ -99,14 +86,9 @@ public class EstudianteFacade extends AbstractFacade<Estudiante> implements Estu
     }
 
     @Override
-    @TransactionAttribute(TransactionAttributeType.NOT_SUPPORTED)
-    public void crearNoSupports2() {
-
-    }
-
-    @Override
     @TransactionAttribute(TransactionAttributeType.MANDATORY)
     public void crearMandatory() {
+                
         Estudiante estudiante = new Estudiante(5, "Pepe");
         em.persist(estudiante);
 
@@ -116,25 +98,14 @@ public class EstudianteFacade extends AbstractFacade<Estudiante> implements Estu
     }
 
     @Override
-    @TransactionAttribute(TransactionAttributeType.MANDATORY)
-    public void crearMandatory2() {
-
-    }
-
-    @Override
     @TransactionAttribute(TransactionAttributeType.NEVER)
     public void crearNever() {
+        
         Estudiante estudiante = new Estudiante(6, "Pepe");
         em.persist(estudiante);
 
         Materia materia = new Materia(6, "Robotica", 6);
         em.persist(materia);
-
-    }
-
-    @Override
-    @TransactionAttribute(TransactionAttributeType.NEVER)
-    public void crearNever2() {
 
     }
 

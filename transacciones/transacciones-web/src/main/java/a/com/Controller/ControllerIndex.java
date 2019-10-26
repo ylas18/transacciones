@@ -38,7 +38,6 @@ public class ControllerIndex implements Serializable {
 
         try {
             estudianteFacadeLocal.crearRequerido();
-            //estudianteFacadeLocal.crearRequerido2();
 
         } catch (Exception e) {
             System.out.println(e.getMessage());
@@ -49,7 +48,6 @@ public class ControllerIndex implements Serializable {
 
         try {
             estudianteFacadeLocal.crearRequeridoNew();
-            //estudianteFacadeLocal.crearRequeridoNew2();
 
         } catch (Exception e) {
             System.out.println(e.getMessage());
@@ -60,7 +58,6 @@ public class ControllerIndex implements Serializable {
 
         try {
             estudianteFacadeLocal.crearSupports();
-            //estudianteFacadeLocal.crearSupports2();
 
         } catch (Exception e) {
             System.out.println(e.getMessage());
@@ -71,7 +68,6 @@ public class ControllerIndex implements Serializable {
 
         try {
             estudianteFacadeLocal.crearNoSupports();
-            //estudianteFacadeLocal.crearNoSupports2();
 
         } catch (Exception e) {
             System.out.println(e.getMessage());
@@ -82,7 +78,6 @@ public class ControllerIndex implements Serializable {
 
         try {
             estudianteFacadeLocal.crearMandatory();
-            //estudianteFacadeLocal.crearMandatory2();
 
         } catch (Exception e) {
             System.out.println(e.getMessage());
@@ -93,7 +88,6 @@ public class ControllerIndex implements Serializable {
 
         try {
             estudianteFacadeLocal.crearNever();
-            //estudianteFacadeLocal.crearNever2();
 
         } catch (Exception e) {
             System.out.println(e.getMessage());
@@ -118,7 +112,7 @@ public class ControllerIndex implements Serializable {
 
         try {
 
-            estudianteTransaccionLocal.requiresNew2Con();
+            estudianteTransaccionLocal.requiresNewCon();
 
         } catch (Exception e) {
 

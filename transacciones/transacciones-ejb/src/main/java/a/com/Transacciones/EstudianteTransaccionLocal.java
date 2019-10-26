@@ -16,7 +16,7 @@ public interface EstudianteTransaccionLocal {
 
     public void requeridoCon();
 
-    public void requiresNew2Con();
+    public void requiresNewCon();
 
     public void supportedCon();
 
@@ -25,7 +25,5 @@ public interface EstudianteTransaccionLocal {
     public void mandatoryCon();
 
     public void neverCon();
-
-    public void todos();
 
 }
