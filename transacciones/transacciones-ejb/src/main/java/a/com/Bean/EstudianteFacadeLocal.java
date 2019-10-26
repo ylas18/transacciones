@@ -32,15 +32,26 @@ public interface EstudianteFacadeLocal {
 
     void crearRequerido();
 
+    void crearRequerido2();
+
     void crearRequeridoNew();
+
+    void crearRequeridoNew2();
 
     void crearSupports();
 
+    void crearSupports2();
+
     void crearNoSupports();
+
+    void crearNoSupports2();
 
     void crearMandatory();
 
+    void crearMandatory2();
+
     void crearNever();
 
+    void crearNever2();
 
 }
