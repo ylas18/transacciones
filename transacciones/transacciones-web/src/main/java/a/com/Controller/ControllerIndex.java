@@ -7,6 +7,7 @@ package a.com.Controller;
 
 import a.com.Bean.EstudianteFacadeLocal;
 import a.com.Bean.MateriaFacadeLocal;
+import a.com.Transacciones.EstudianteSinTransaccionLocal;
 import a.com.Transacciones.EstudianteTransaccionLocal;
 import java.io.Serializable;
 import javax.ejb.EJB;
@@ -24,6 +25,9 @@ public class ControllerIndex implements Serializable {
 
     @EJB
     EstudianteTransaccionLocal estudianteTransaccionLocal;
+
+    @EJB
+    EstudianteSinTransaccionLocal estudianteSinTransaccionLocal;
 
     @EJB
     EstudianteFacadeLocal estudianteFacadeLocal;
@@ -170,6 +174,13 @@ public class ControllerIndex implements Serializable {
             System.out.println(e.getMessage());
 
         }
+    }
+
+    public void iniciarSupportConCreate() {
+
+        estudianteSinTransaccionLocal.crearSupportsConCreate();
+
+        System.out.println("InicieMetodo");
     }
 
 }

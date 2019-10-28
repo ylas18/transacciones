@@ -31,6 +31,9 @@ public class EstudianteFacade extends AbstractFacade<Estudiante> implements Estu
     protected EntityManager getEntityManager() {
         return em;
     }
+    
+    MateriaFacadeLocal materiaFacadeLocal;
+    EstudianteFacadeLocal estudianteFacadeLocal;
 
     public EstudianteFacade() {
         super(Estudiante.class);
@@ -39,7 +42,9 @@ public class EstudianteFacade extends AbstractFacade<Estudiante> implements Estu
     @Override
     @TransactionAttribute(TransactionAttributeType.REQUIRED)
     public void crearRequerido() {
-        
+
+        System.out.println("Entre al Required");
+
         Estudiante estudiante = new Estudiante(1, "Pepe");
         em.persist(estudiante);
 
@@ -51,7 +56,9 @@ public class EstudianteFacade extends AbstractFacade<Estudiante> implements Estu
     @Override
     @TransactionAttribute(TransactionAttributeType.REQUIRES_NEW)
     public void crearRequeridoNew() {
-        
+
+        System.out.println("Entre al Requires_New");
+
         Estudiante estudiante = new Estudiante(2, "Pepe");
         em.persist(estudiante);
 
@@ -63,8 +70,9 @@ public class EstudianteFacade extends AbstractFacade<Estudiante> implements Estu
     @Override
     @TransactionAttribute(TransactionAttributeType.SUPPORTS)
     public void crearSupports() {
-        
+
         System.out.println("Entre al Support");
+        
         Estudiante estudiante = new Estudiante(3, "Pepe");
         em.persist(estudiante);
 
@@ -76,7 +84,9 @@ public class EstudianteFacade extends AbstractFacade<Estudiante> implements Estu
     @Override
     @TransactionAttribute(TransactionAttributeType.NOT_SUPPORTED)
     public void crearNoSupports() {
-        
+
+        System.out.println("Entre al No_Support");
+
         Estudiante estudiante = new Estudiante(4, "Pepe");
         em.persist(estudiante);
 
@@ -88,7 +98,9 @@ public class EstudianteFacade extends AbstractFacade<Estudiante> implements Estu
     @Override
     @TransactionAttribute(TransactionAttributeType.MANDATORY)
     public void crearMandatory() {
-                
+
+        System.out.println("Entre al Mandatory");
+
         Estudiante estudiante = new Estudiante(5, "Pepe");
         em.persist(estudiante);
 
@@ -100,7 +112,9 @@ public class EstudianteFacade extends AbstractFacade<Estudiante> implements Estu
     @Override
     @TransactionAttribute(TransactionAttributeType.NEVER)
     public void crearNever() {
-        
+
+        System.out.println("Entre al Never");
+
         Estudiante estudiante = new Estudiante(6, "Pepe");
         em.persist(estudiante);
 
@@ -108,5 +122,7 @@ public class EstudianteFacade extends AbstractFacade<Estudiante> implements Estu
         em.persist(materia);
 
     }
+
+
 
 }
