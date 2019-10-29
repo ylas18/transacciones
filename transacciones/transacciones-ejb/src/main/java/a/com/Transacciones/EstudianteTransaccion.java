@@ -32,9 +32,9 @@ public class EstudianteTransaccion implements EstudianteTransaccionLocal {
     @Override
     @TransactionAttribute(TransactionAttributeType.REQUIRED)
     public void requeridoCon() {
-        
+
         Estudiante estudiante = new Estudiante(7, "Pedro");
-        
+
         estudianteFacadeLocal.create(estudiante);
         estudianteFacadeLocal.crearRequerido();
     }
@@ -42,19 +42,25 @@ public class EstudianteTransaccion implements EstudianteTransaccionLocal {
     @Override
     @TransactionAttribute(TransactionAttributeType.REQUIRED)
     public void requiresNewCon() {
-        
+
         Estudiante estudiante = new Estudiante(8, "Pedro");
-        
+
         estudianteFacadeLocal.create(estudiante);
-        estudianteFacadeLocal.crearRequeridoNew();
+        try {
+
+            estudianteFacadeLocal.crearRequeridoNew();
+
+        } catch (Exception e) {
+        }
+
     }
 
     @Override
     @TransactionAttribute(TransactionAttributeType.REQUIRED)
     public void supportedCon() {
-        
+
         Estudiante estudiante = new Estudiante(9, "Pedro");
-        
+
         estudianteFacadeLocal.create(estudiante);
         estudianteFacadeLocal.crearSupports();
     }
@@ -62,19 +68,27 @@ public class EstudianteTransaccion implements EstudianteTransaccionLocal {
     @Override
     @TransactionAttribute(TransactionAttributeType.REQUIRED)
     public void notSupportedCon() {
-        
+
         Estudiante estudiante = new Estudiante(10, "Pedro");
-        
+
         estudianteFacadeLocal.create(estudiante);
-        estudianteFacadeLocal.crearNoSupports();
+
+        try {
+            estudianteFacadeLocal.crearNoSupports();
+
+        } catch (Exception e) {
+            
+            System.out.println("Ocurrio un error");
+        }
+
     }
 
     @Override
     @TransactionAttribute(TransactionAttributeType.REQUIRED)
     public void mandatoryCon() {
-        
+
         Estudiante estudiante = new Estudiante(11, "Pedro");
-        
+
         estudianteFacadeLocal.create(estudiante);
         estudianteFacadeLocal.crearMandatory();
     }
@@ -82,9 +96,9 @@ public class EstudianteTransaccion implements EstudianteTransaccionLocal {
     @Override
     @TransactionAttribute(TransactionAttributeType.REQUIRED)
     public void neverCon() {
-        
+
         Estudiante estudiante = new Estudiante(12, "Pedro");
-        
+
         estudianteFacadeLocal.create(estudiante);
         estudianteFacadeLocal.crearNever();
     }

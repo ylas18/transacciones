@@ -17,6 +17,7 @@ import javax.persistence.PersistenceContext;
 
 /**
  * http://cursojavaee.blogspot.com/2013/06/diapositivas-clase-11-transacciones-en.html
+ * https://www.oscarblancarteblog.com/2016/12/20/introduccion-java-transaction-api-jta/
  *
  * @author Yesid
  */
